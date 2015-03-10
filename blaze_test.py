@@ -22,6 +22,7 @@ def blaze_test():
         csvstr = '%s.csv' % t
         print t
         into.into(bl.CSV(csvstr), getattr(db, t))
+        os.system('gzip %s' % csvstr)
 
 if __name__ == '__main__':
     blaze_test()
