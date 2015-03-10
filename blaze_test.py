@@ -12,6 +12,7 @@ def blaze_test():
     db = bl.Data('postgresql://ddboline:BQGIvkKFZPejrKvX@192.168.0.100:5432/lahman2014')
     for d in dir(db):
         if hasattr(db, d):
+            if type(getattr(db, d)) == bl.expr.expressions.Field
             print d, type(getattr(db, d))
     df = db.teams
     print df.columns
