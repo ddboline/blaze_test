@@ -8,7 +8,7 @@ USER = os.getenv('USER')
 
 def blaze_test():
     engine = create_engine('postgresql://ddboline:BQGIvkKFZPejrKvX@192.168.0.100:5432/lahman2014')
-    print dir(engine)
+    print engine.table_names
     con = engine.connect()
 
 if __name__ == '__main__':
