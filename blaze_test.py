@@ -7,7 +7,7 @@ import pandas as pd
 USER = os.getenv('USER')
 
 def blaze_test():
-    engine = create_engine('postgresql://ddboline:BQGIvkKFZPejrKvX@localhost/lahman2014')
+    engine = create_engine('postgresql://ddboline:BQGIvkKFZPejrKvX@192.168.0.100:5432/lahman2014')
     con = engine.connect()
 
 if __name__ == '__main__':
