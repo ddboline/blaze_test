@@ -18,7 +18,8 @@ def blaze_test():
     df = db.teams
     print df.columns
     for t in tables:
-        into.into('%s.csv' % t, 'postgresql://ddboline:BQGIvkKFZPejrKvX@192.168.0.100:5432/lahman2014::%s' % t)
+        print t
+        into.into('%s.csv.gz' % t, 'postgresql://ddboline:BQGIvkKFZPejrKvX@192.168.0.100:5432/lahman2014::%s' % t)
 
 if __name__ == '__main__':
     blaze_test()
