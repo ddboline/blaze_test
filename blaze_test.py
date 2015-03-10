@@ -20,7 +20,7 @@ def blaze_test():
     print df.columns
     for t in tables:
         csvstr = '%s.csv' % t
-        print csvstr, tabstr
+        print t
         into.into(csvstr, getattr(db, t))
 
 if __name__ == '__main__':
