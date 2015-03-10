@@ -10,7 +10,8 @@ USER = os.getenv('USER')
 
 def blaze_test():
     db = bl.Data('postgresql://ddboline:BQGIvkKFZPejrKvX@192.168.0.100:5432/lahman2014')
-    print dir(db)
+    for d in dir(db):
+        print type(d)
     df = db.teams
     print df.columns
     into.into('temp.csv', 'postgresql://ddboline:BQGIvkKFZPejrKvX@192.168.0.100:5432/lahman2014::teams')
