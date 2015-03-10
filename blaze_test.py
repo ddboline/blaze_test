@@ -19,9 +19,9 @@ def blaze_test():
     df = db.teams
     print df.columns
     for t in tables:
-        print t
         csvstr = '%s.csv' % t
         tabstr = '%s::%s' % (dbstring, t)
+        print csvstr, tabstr
         into.into(csvstr, tabstr)
 
 if __name__ == '__main__':
