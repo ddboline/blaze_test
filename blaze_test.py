@@ -21,7 +21,7 @@ def blaze_test():
     for t in tables:
         csvstr = '%s.csv' % t
         print t
-        into.into(csvstr, getattr(db, t))
+        into.into(CSV(csvstr), getattr(db, t))
 
 if __name__ == '__main__':
     blaze_test()
