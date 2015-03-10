@@ -9,10 +9,11 @@ import into
 USER = os.getenv('USER')
 
 def blaze_test():
-    engine = create_engine('postgresql://ddboline:BQGIvkKFZPejrKvX@192.168.0.100:5432/lahman2014')
-    db = bl.Data(engine)
+    db = bl.Data('postgresql://ddboline:BQGIvkKFZPejrKvX@192.168.0.100:5432/lahman2014')
     print dir(db)
-    df = db.teams.columns
+    df = db.teams
+    print df.columns
+    into.into('temp.csv', 'postgresql://ddboline:BQGIvkKFZPejrKvX@192.168.0.100:5432/lahman2014::teams')
 
 if __name__ == '__main__':
     blaze_test()
