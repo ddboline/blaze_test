@@ -87,3 +87,6 @@ print repr(bl_df.amount * 2)
 print repr(pd_df[['id', 'amount']])
 print repr(bl_df[['id', 'amount']])
 
+print repr(pd_df[pd_df.amount > 300])
+print repr(bl_df[bl_df.amount > 300])
+
