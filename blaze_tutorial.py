@@ -143,5 +143,4 @@ print repr(bl_df.amount.dtypes)
 print repr(bl_dt.amount.dshape)
 
 print type(pd_df), type(bl_df), type(bl_dt)
-print bl.DataFrame.__doc__
-print bl.Data.__doc__
+print dir(bl.Data)
