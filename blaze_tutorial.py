@@ -58,5 +58,5 @@ print into(pd.DataFrame, result)
 
 print into('output.csv', result)
 
-print iris.sepal_length.mean()
-print bl.mean(iris.sepal_length)
+print repr(iris.sepal_length.mean())
+print repr(bl.mean(iris.sepal_length))
