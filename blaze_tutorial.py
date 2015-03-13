@@ -82,4 +82,4 @@ pd_df = pd.DataFrame({
 bl_df = bl.Data(df)
 
 print repr(pd_df.amount * 2), repr(bl_df.amount * 2)
-
+print repr(pd_df[['id', 'amount']]), repr(bl_df[['id', 'amount']])
