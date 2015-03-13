@@ -141,3 +141,5 @@ print repr(bl_dt.dshape)
 print repr(pd_df.amount.dtypes)
 print repr(bl_df.amount.dtypes)
 print repr(bl_dt.amount.dshape)
+
+print type(pd_df), type(bl_df), type(bl_dt)
