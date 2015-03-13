@@ -83,6 +83,7 @@ bl_df = bl.DataFrame(df)
 bl_dt = bl.Data(df)
 
 print repr(pd_df.amount * 2)
+print repr(bl_df.amount * 2)
 print repr(bl_dt.amount * 2)
 
 print repr(pd_df[['id', 'amount']])
