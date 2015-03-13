@@ -115,10 +115,9 @@ print repr(bl_df.rename(columns={'name': 'alias', 'amount': 'dollars'}))
 print repr(bl_dt.relabel(name='alias', amount='dollars'))
 
 print repr(pd_df.drop_duplicates())
-print repr(pd_df.name.drop_duplicates())
-
 print repr(bl_df.drop_duplicates())
-print repr(bl_df.name.drop_duplicates())
-
 print repr(bl_dt.distinct())
+
+print repr(pd_df.name.drop_duplicates())
+print repr(bl_df.name.drop_duplicates())
 print repr(bl_dt.name.distinct())
