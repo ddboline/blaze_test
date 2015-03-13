@@ -53,7 +53,7 @@ print repr(bl.by(iris.species, min=iris.petal_width.min(), max=iris.petal_width.
 
 result = bl.by(iris.species, min=iris.petal_width.min(), max=iris.petal_width.max())
 
-print into(result, bl.DataFrame)
-print into(result, pd.DataFrame)
+#print into(result, bl.DataFrame)
+#print into(result, pd.DataFrame)
 
 print into(result, 'output.csv')
