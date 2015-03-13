@@ -125,3 +125,7 @@ print repr(bl_dt.name.distinct())
 print repr(pd_df.amount.mean())
 print repr(bl_df.amount.mean())
 print repr(bl_dt.amount.mean())
+
+print repr(pd_df)
+print repr(bl_df)
+print repr(bl_dt)
