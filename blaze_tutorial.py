@@ -87,12 +87,15 @@ print repr(bl_df.amount * 2)
 print repr(bl_dt.amount * 2)
 
 print repr(pd_df[['id', 'amount']])
+print repr(bl_df[['id', 'amount']])
 print repr(bl_dt[['id', 'amount']])
 
 print repr(pd_df[pd_df.amount > 300])
+print repr(bl_df[pd_df.amount > 300])
 print repr(bl_dt[bl_dt.amount > 300])
 
 print repr(pd_df.groupby('name').amount.mean())
+print repr(bl_df.groupby('name').amount.mean())
 print repr(pd_df.groupby(['name', 'id']).amount.mean())
 
 print repr(bl.by(bl_dt.name, amount=bl_dt.amount.mean()))
