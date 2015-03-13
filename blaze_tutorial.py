@@ -65,5 +65,5 @@ print repr(bl.by(iris.species, shortest=iris.petal_length.min(), longest=iris.pe
 
 print repr(iris.head())
 
-bl.transform(iris, sepal_ratio=iris.sepal_length/iris.sepal_width, petal_ratio=iris.petal_length/iris.petal_width)
+iris = bl.transform(iris, sepal_ratio=iris.sepal_length/iris.sepal_width, petal_ratio=iris.petal_length/iris.petal_width)
 print repr(iris.head())
