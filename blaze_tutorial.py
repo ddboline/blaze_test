@@ -133,3 +133,11 @@ print repr(bl_dt)
 print repr(pd_df.amount.value_counts())
 print repr(bl_df.amount.value_counts())
 print repr(bl_dt.amount.count_values())
+
+print repr(pd_df.dtypes)
+print repr(bl_df.dtypes)
+print repr(bl_dt.dshape)
+
+print repr(pd_df.amount.dtypes)
+print repr(bl_df.amount.dtypes)
+print repr(bl_dt.amount.dshape)
