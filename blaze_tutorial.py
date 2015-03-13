@@ -44,5 +44,5 @@ print repr(t[t.balance < 0].name)
 iris = bl.Data('blaze/blaze/examples/data/iris.csv')
 print repr(iris)
 
-iris = Data('sqlite:///blaze/blaze/examples/data/iris.db::iris')
+iris = bl.Data('sqlite:///blaze/blaze/examples/data/iris.db::iris')
 print repr(iris)
