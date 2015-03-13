@@ -90,3 +90,7 @@ print repr(bl_df[['id', 'amount']])
 print repr(pd_df[pd_df.amount > 300])
 print repr(bl_df[bl_df.amount > 300])
 
+print repr(pd_df.groupby('name').amount.mean()), repr(pd_df.groupby(['name', 'id']))
+print repr(bl.by(bl_df.name, amount=bl_df.amount.mean())), \
+    repr(bl.by(bl.merge(bl_df.name, bl_df.id), amount=bl_df.amount.mean()))
+
