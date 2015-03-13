@@ -23,3 +23,8 @@ bl_df_dir = dir(df)
 df = pd.DataFrame(L, columns=['id', 'name', 'amount'])
 print df[df.amount < 0].name
 pd_df_dir = dir(df)
+
+print len(bl_df_dir), len(pd_df_dir)
+print len([d for d in bl_df_dir if d in pd_df_dir])
+print [d for d in bl_df_dir if d not in pd_df_dir]
+print [d for d in pd_df_dir if d not in bl_df_dir]
