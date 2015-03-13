@@ -56,5 +56,4 @@ result = bl.by(iris.species, min=iris.petal_width.min(), max=iris.petal_width.ma
 print into(bl.DataFrame, result)
 print into(pd.DataFrame, result)
 
-print into.__doc__
 print into('output.csv', result)
