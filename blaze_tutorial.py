@@ -52,8 +52,6 @@ print repr(iris)
 print repr(bl.by(iris.species, min=iris.petal_width.min(), max=iris.petal_width.max()))
 
 result = bl.by(iris.species, min=iris.petal_width.min(), max=iris.petal_width.max())
-result_list = into(result, list)
-print result_list
 
 print into(result, bl.DataFrame)
 print into(result, pd.DataFrame)
