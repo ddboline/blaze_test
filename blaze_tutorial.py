@@ -60,3 +60,5 @@ print into('output.csv', result)
 
 print repr(iris.sepal_length.mean())
 print repr(bl.mean(iris.sepal_length))
+
+print repr(bl.by(iris.species, shortest=iris.petal_length.min(), longest=iris.petal_length.max(), average=iris.petal_length.mean()))
