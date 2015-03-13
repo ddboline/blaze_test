@@ -107,7 +107,9 @@ print repr(bl.by(bl.merge(bl_dt.name, bl_dt.id), amount=bl_dt.amount.mean()))
 #bl.join(bl_dt, bl_dt2, 'name')
 
 print repr(pd_df.amount.map(lambda x: x+1))
+print repr(bl_df.amount.map(lambda x: x+1))
 print repr(bl_dt.amount.map(lambda x: x+1, 'int64'))
 
 print repr(pd_df.rename(columns={'name': 'alias', 'amount': 'dollars'}))
+print repr(bl_df.rename(columns={'name': 'alias', 'amount': 'dollars'}))
 print repr(bl_dt.relabel(name='alias', amount='dollars'))
