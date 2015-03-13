@@ -4,6 +4,7 @@ import os
 from sqlalchemy import create_engine
 import pandas as pd
 import blaze as bl
+from into import into
 
 accounts = bl.Symbol('accounts', 'var * {id: int, name: string, amount: int}')
 deadbeats = accounts[accounts.amount < 0].name
@@ -49,3 +50,12 @@ iris = bl.Data('sqlite:///blaze/blaze/examples/data/iris.db::iris')
 print repr(iris)
 
 print repr(bl.by(iris.species, min=iris.petal_width.min(), max=iris.petal_width.max()))
+
+result = bl.by(iris.species, min=iris.petal_width.min(), max=iris.petal_width.max())
+result_list = into(result, list)
+print result_list
+
+print into(result, bl.DataFrame)
+print into(result, pd.DataFrame)
+
+print into(result, 'output.csv')
