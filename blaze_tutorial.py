@@ -41,3 +41,5 @@ print repr(t[t.balance < 0])
 
 print repr(t[t.balance < 0].name)
 
+iris = bl.Data('blaze/blaze/examples/data/iris.csv')
+print repr(iris)
