@@ -129,3 +129,7 @@ print repr(bl_dt.amount.mean())
 print repr(pd_df)
 print repr(bl_df)
 print repr(bl_dt)
+
+print repr(pd_df.amount.value_counts())
+print repr(bl_df.amount.value_counts())
+print repr(bl_dt.amount.value_counts())
