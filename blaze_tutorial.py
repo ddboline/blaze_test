@@ -100,5 +100,4 @@ print repr(bl.by(bl.merge(bl_df.name, bl_df.id), amount=bl_df.amount.mean()))
 #bl.join(bl_df, bl_df2, 'name')
 
 print repr(pd_df.amount.map(lambda x: x+1))
-print repr(bl_df.amount.map(lambda x: x+1))
 print repr(bl_df.amount.map(lambda x: x+1, 'int64'))
