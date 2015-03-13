@@ -18,7 +18,8 @@ print list(bl.compute(deadbeats, L))
 
 df = bl.DataFrame(L, columns=['id', 'name', 'amount'])
 print bl.compute(deadbeats, df)
-print dir(df)
+bl_df_dir = dir(df)
 
 df = pd.DataFrame(L, columns=['id', 'name', 'amount'])
-print dir(df)
+print df[df.amount < 0].name
+pd_df_dir = dir(df)
