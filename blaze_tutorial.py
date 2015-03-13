@@ -67,3 +67,5 @@ print repr(iris.head())
 
 iris = bl.transform(iris, sepal_ratio=iris.sepal_length/iris.sepal_width, petal_ratio=iris.petal_length/iris.petal_width)
 print repr(iris.head())
+
+print repr(iris.like(species='*versicolor'))
