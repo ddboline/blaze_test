@@ -70,4 +70,4 @@ print repr(iris.head())
 
 print repr(iris.like(species='*versicolor'))
 
-print repr(iris.sepal_length.mean())
+print repr(iris.relabel(petal_length='PETAL-LENGTH', petal_width='PETAL-WIDTH'))
