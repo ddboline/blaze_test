@@ -36,4 +36,4 @@ t = bl.Data([(1, 'Alice', 100),
          (5, 'Edith', -500)],
          fields=['id', 'name', 'balance'])
 
-print t
+print dir(t)
