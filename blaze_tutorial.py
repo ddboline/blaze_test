@@ -28,3 +28,12 @@ print len(bl_df_dir), len(pd_df_dir)
 print len([d for d in bl_df_dir if d in pd_df_dir])
 print [d for d in bl_df_dir if d not in pd_df_dir]
 print [d for d in pd_df_dir if d not in bl_df_dir]
+
+t = Data([(1, 'Alice', 100),
+         (2, 'Bob', -200),
+         (3, 'Charlie', 300),
+         (4, 'Denis', 400),
+         (5, 'Edith', -500)],
+         fields=['id', 'name', 'balance'])
+
+print t
