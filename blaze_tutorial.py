@@ -17,5 +17,5 @@ L = [[1, 'Alice',   100],
 print list(bl.compute(deadbeats, L))
 
 df = bl.DataFrame(L, columns=['id', 'name', 'amount'])
-compute(deadbeats, df)
+bl.compute(deadbeats, df)
 
