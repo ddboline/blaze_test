@@ -79,8 +79,8 @@ pd_df = pd.DataFrame({
 })
 
 # put the `df` DataFrame into a Blaze Data object
-bl_df = bl.DataFrame(df)
-bl_dt = bl.Data(df)
+bl_df = bl.DataFrame(pd_df)
+bl_dt = bl.Data(pd_df)
 
 print repr(pd_df.amount * 2)
 print repr(bl_df.amount * 2)
