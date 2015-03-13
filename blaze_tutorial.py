@@ -62,3 +62,7 @@ print repr(iris.sepal_length.mean())
 print repr(bl.mean(iris.sepal_length))
 
 print repr(bl.by(iris.species, shortest=iris.petal_length.min(), longest=iris.petal_length.max(), average=iris.petal_length.mean()))
+
+print repr(iris.head())
+
+print repr(bl.transform(iris, sepal_ratio=iris.sepal_length/iris.sepal_width, petal_ratio=iris.petal_length/iris.petal_width))
