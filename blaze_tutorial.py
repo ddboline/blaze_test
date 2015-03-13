@@ -18,4 +18,4 @@ print list(bl.compute(deadbeats, L))
 
 df = bl.DataFrame(L, columns=['id', 'name', 'amount'])
 print bl.compute(deadbeats, df)
-
+print dir(df)
