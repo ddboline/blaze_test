@@ -9,7 +9,7 @@ import into
 USER = os.getenv('USER')
 
 def blaze_test():
-    dbstring = 'postgresql://ddboline:BQGIvkKFZPejrKvX@192.168.0.100:5432/lahman2014'
+    dbstring = 'postgresql://ddboline:BQGIvkKFZPejrKvX@ddbolineathome.mooo.com:5432/lahman2014'
     db = bl.Data(dbstring)
     tables = []
     for d in dir(db):
