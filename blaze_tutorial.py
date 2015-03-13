@@ -95,8 +95,10 @@ print repr(bl_df[bl_df.amount > 300])
 print repr(bl_dt[bl_dt.amount > 300])
 
 print repr(pd_df.groupby('name').amount.mean())
-print repr(bl_df.groupby('name').amount.mean())
 print repr(pd_df.groupby(['name', 'id']).amount.mean())
+
+print repr(bl_df.groupby('name').amount.mean())
+print repr(bl_df.groupby(['name', 'id']).amount.mean())
 
 print repr(bl.by(bl_dt.name, amount=bl_dt.amount.mean()))
 print repr(bl.by(bl.merge(bl_dt.name, bl_dt.id), amount=bl_dt.amount.mean()))
