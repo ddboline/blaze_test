@@ -121,3 +121,7 @@ print repr(bl_dt.distinct())
 print repr(pd_df.name.drop_duplicates())
 print repr(bl_df.name.drop_duplicates())
 print repr(bl_dt.name.distinct())
+
+print repr(pd_df.amount.mean())
+print repr(bl_df.amount.mean())
+print repr(bl_dt.amount.mean())
