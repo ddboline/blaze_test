@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 import pandas as pd
 import blaze as bl
 
-accounts = bl.Symbol('accounts', 'var * {id: int, name: string, amount, int}')
+accounts = bl.Symbol('accounts', 'var * {id: int, name: string, amount: int}')
 deadbeats = accounts[accounts.amount < 0].name
 
 L = [[1, 'Alice',   100],
