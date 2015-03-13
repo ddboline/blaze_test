@@ -79,25 +79,29 @@ pd_df = pd.DataFrame({
 })
 
 # put the `df` DataFrame into a Blaze Data object
-bl_df = bl.Data(df)
+bl_df = bl.DataFrame(df)
+bl_dt = bl.Data(df)
 
 print repr(pd_df.amount * 2)
-print repr(bl_df.amount * 2)
+print repr(bl_dt.amount * 2)
 
 print repr(pd_df[['id', 'amount']])
-print repr(bl_df[['id', 'amount']])
+print repr(bl_dt[['id', 'amount']])
 
 print repr(pd_df[pd_df.amount > 300])
-print repr(bl_df[bl_df.amount > 300])
+print repr(bl_dt[bl_dt.amount > 300])
 
 print repr(pd_df.groupby('name').amount.mean())
 print repr(pd_df.groupby(['name', 'id']).amount.mean())
 
-print repr(bl.by(bl_df.name, amount=bl_df.amount.mean()))
-print repr(bl.by(bl.merge(bl_df.name, bl_df.id), amount=bl_df.amount.mean()))
+print repr(bl.by(bl_dt.name, amount=bl_dt.amount.mean()))
+print repr(bl.by(bl.merge(bl_dt.name, bl_dt.id), amount=bl_dt.amount.mean()))
 
 #pd.merge(pd_df, pd_df2, on='name')
-#bl.join(bl_df, bl_df2, 'name')
+#bl.join(bl_dt, bl_dt2, 'name')
 
 print repr(pd_df.amount.map(lambda x: x+1))
-print repr(bl_df.amount.map(lambda x: x+1, 'int64'))
+print repr(bl_dt.amount.map(lambda x: x+1, 'int64'))
+
+print repr(pd_df.rename(columns={'name': 'alias', 'amount': 'dollars'}))
+print repr(bl_dt.relabel(name='alias', amount='dollars'))
