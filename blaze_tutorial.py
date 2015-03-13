@@ -37,3 +37,6 @@ t = bl.Data([(1, 'Alice', 100),
          fields=['id', 'name', 'balance'])
 
 print repr(t)
+print t[t.balance < 0]
+
+print t[t.balance < 0].name
