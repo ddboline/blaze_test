@@ -46,3 +46,5 @@ print repr(iris)
 
 iris = bl.Data('sqlite:///blaze/blaze/examples/data/iris.db::iris')
 print repr(iris)
+
+print bl.by(iris.species, min=iris.petal_width.min(), max=iris.petal_width.max())
