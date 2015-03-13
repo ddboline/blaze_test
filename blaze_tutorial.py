@@ -14,7 +14,7 @@ L = [[1, 'Alice',   100],
      [4, 'Denis',   400],
      [5, 'Edith',  -500]]
 
-print list(compute(deadbeats, L))
+print list(bl.compute(deadbeats, L))
 
 df = bl.DataFrame(L, columns=['id', 'name', 'amount'])
 compute(deadbeats, df)
