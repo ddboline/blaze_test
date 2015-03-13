@@ -81,5 +81,9 @@ pd_df = pd.DataFrame({
 # put the `df` DataFrame into a Blaze Data object
 bl_df = bl.Data(df)
 
-print repr(pd_df.amount * 2), repr(bl_df.amount * 2)
-print repr(pd_df[['id', 'amount']]), repr(bl_df[['id', 'amount']])
+print repr(pd_df.amount * 2)
+print repr(bl_df.amount * 2)
+
+print repr(pd_df[['id', 'amount']])
+print repr(bl_df[['id', 'amount']])
+
