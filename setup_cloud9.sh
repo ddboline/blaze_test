@@ -12,3 +12,5 @@ sudo apt-get install -y --force-yes python-pandas
 sudo apt-get install -y --force-yes python-theano python-lasagne 
 sudo apt-get install -y --force-yes python-nolearn python-pylearn2
 sudo apt-get install -y --force-yes python-sqlalchemy
+
+git clone https://github.com/ContinuumIO/blaze
