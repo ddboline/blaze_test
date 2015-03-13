@@ -71,3 +71,15 @@ print repr(iris.head())
 print repr(iris.like(species='*versicolor'))
 
 print repr(iris.relabel(petal_length='PETAL-LENGTH', petal_width='PETAL-WIDTH'))
+
+pd_df = pd.DataFrame({
+   'name': ['Alice', 'Bob', 'Joe', 'Bob'],
+   'amount': [100, 200, 300, 400],
+   'id': [1, 2, 3, 4],
+})
+
+# put the `df` DataFrame into a Blaze Data object
+bl_df = bl.Data(df)
+
+print repr(pd_df.amount * 2), repr(bl_df.amount * 2)
+
