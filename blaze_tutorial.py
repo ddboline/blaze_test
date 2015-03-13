@@ -132,4 +132,4 @@ print repr(bl_dt)
 
 print repr(pd_df.amount.value_counts())
 print repr(bl_df.amount.value_counts())
-print repr(bl_dt.amount.value_counts())
+print repr(bl_dt.amount.count_values())
