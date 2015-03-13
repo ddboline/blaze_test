@@ -57,3 +57,6 @@ print into(bl.DataFrame, result)
 print into(pd.DataFrame, result)
 
 print into('output.csv', result)
+
+print iris.sepal_length.mean()
+print bl.mean(iris.sepal_length)
