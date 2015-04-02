@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import os
+import gzip
 from sqlalchemy import create_engine
 import pandas as pd
 import blaze as bl
@@ -24,6 +25,8 @@ def blaze_test():
         print t
         into.into(bl.CSV(csvstr), getattr(db, t))
         os.system('gzip %s' % csvstr)
+        df = pd.read_csv('%s.gz' % csvstr, compression='gzip')
+        print df.describe()
         exit(0)
 
 if __name__ == '__main__':
