@@ -1,8 +1,6 @@
 #!/usr/bin/python
 
 import os
-import gzip
-from sqlalchemy import create_engine
 import pandas as pd
 import blaze as bl
 import into
@@ -10,23 +8,28 @@ import into
 USER = os.getenv('USER')
 
 def blaze_test():
-    #dbstring = 'postgresql://ddboline:BQGIvkKFZPejrKvX@ddbolineathome.mooo.com:5432/lahman2014'
-    dbstring = 'postgresql://ddboline:BQGIvkKFZPejrKvX@localhost:5432/lahman2014'
-    db = bl.Data(dbstring)
+    user = 'ddboline'
+    pwd = 'BQGIvkKFZPejrKvX'
+#    host = 'ddbolineathome.mooo.com'
+    host = 'localhost'
+    port = 5432
+    dbname = 'lahman2014'
+    dbstring = 'postgresql://%s:%s@%s:%s/%s' % (user, pwd, host, port, dbname)
+    dbb = bl.Data(dbstring)
     tables = []
-    for d in dir(db):
-        if hasattr(db, d):
-            if type(getattr(db, d)) == bl.expr.expressions.Field:
-                tables.append(d)
-    df = db.teams
-    print df.columns
-    for t in tables:
-        csvstr = '%s.csv' % t
-        print t
-        into.into(bl.CSV(csvstr), getattr(db, t))
+    for dbc in dir(dbb):
+        if hasattr(dbb, dbc):
+            if type(getattr(dbb, dbc)) == bl.expr.expressions.Field:
+                tables.append(dbc)
+    teams_df = dbb.teams
+    print teams_df.columns
+    for tab in tables:
+        csvstr = '%s.csv' % tab
+        print tab
+        into.into(bl.CSV(csvstr), getattr(dbb, tab))
         os.system('gzip %s' % csvstr)
-        df = pd.read_csv('%s.gz' % csvstr, compression='gzip')
-        print df.describe()
+        teams_df = pd.read_csv('%s.gz' % csvstr, compression='gzip')
+        print teams_df.describe()
         exit(0)
 
 if __name__ == '__main__':

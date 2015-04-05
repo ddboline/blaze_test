@@ -1,7 +1,5 @@
 #!/usr/bin/python
 
-import os
-from sqlalchemy import create_engine
 import pandas as pd
 import blaze as bl
 from into import into
@@ -9,11 +7,11 @@ from into import into
 accounts = bl.Symbol('accounts', 'var * {id: int, name: string, amount: int}')
 deadbeats = accounts[accounts.amount < 0].name
 
-L = [[1, 'Alice',   100],
-     [2, 'Bob',    -200],
+L = [[1, 'Alice', 100],
+     [2, 'Bob', -200],
      [3, 'Charlie', 300],
-     [4, 'Denis',   400],
-     [5, 'Edith',  -500]]
+     [4, 'Denis', 400],
+     [5, 'Edith', -500]]
 
 print list(bl.compute(deadbeats, L))
 
@@ -49,9 +47,11 @@ print repr(iris)
 iris = bl.Data('sqlite:///blaze/blaze/examples/data/iris.db::iris')
 print repr(iris)
 
-print repr(bl.by(iris.species, min=iris.petal_width.min(), max=iris.petal_width.max()))
+print repr(bl.by(iris.species, min=iris.petal_width.min(),
+                 max=iris.petal_width.max()))
 
-result = bl.by(iris.species, min=iris.petal_width.min(), max=iris.petal_width.max())
+result = bl.by(iris.species, min=iris.petal_width.min(),
+               max=iris.petal_width.max())
 
 print into(bl.DataFrame, result)
 print into(pd.DataFrame, result)
@@ -61,16 +61,20 @@ print into('output.csv', result)
 print repr(iris.sepal_length.mean())
 print repr(bl.mean(iris.sepal_length))
 
-print repr(bl.by(iris.species, shortest=iris.petal_length.min(), longest=iris.petal_length.max(), average=iris.petal_length.mean()))
+print repr(bl.by(iris.species, shortest=iris.petal_length.min(),
+                 longest=iris.petal_length.max(),
+                 average=iris.petal_length.mean()))
 
 print repr(iris.head())
 
-iris = bl.transform(iris, sepal_ratio=iris.sepal_length/iris.sepal_width, petal_ratio=iris.petal_length/iris.petal_width)
+iris = bl.transform(iris, sepal_ratio=iris.sepal_length/iris.sepal_width,
+                    petal_ratio=iris.petal_length/iris.petal_width)
 print repr(iris.head())
 
 print repr(iris.like(species='*versicolor'))
 
-print repr(iris.relabel(petal_length='PETAL-LENGTH', petal_width='PETAL-WIDTH'))
+print repr(iris.relabel(petal_length='PETAL-LENGTH',
+                        petal_width='PETAL-WIDTH'))
 
 pd_df = pd.DataFrame({
    'name': ['Alice', 'Bob', 'Joe', 'Bob'],
