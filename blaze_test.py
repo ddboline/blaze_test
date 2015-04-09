@@ -3,7 +3,7 @@
 import os
 import pandas as pd
 import blaze as bl
-import into
+import odo
 
 USER = os.getenv('USER')
 
@@ -26,7 +26,7 @@ def blaze_test():
     for tab in tables:
         csvstr = '%s.csv' % tab
         print tab
-        into.into(bl.CSV(csvstr), getattr(dbb, tab))
+        odo.odo(getattr(dbb, tab), bl.CSV(csvstr))
         os.system('gzip %s' % csvstr)
         teams_df = pd.read_csv('%s.gz' % csvstr, compression='gzip')
         print teams_df.describe()

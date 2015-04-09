@@ -2,7 +2,7 @@
 
 import pandas as pd
 import blaze as bl
-from into import into
+from odo import odo
 
 accounts = bl.Symbol('accounts', 'var * {id: int, name: string, amount: int}')
 deadbeats = accounts[accounts.amount < 0].name
@@ -53,10 +53,10 @@ print repr(bl.by(iris.species, min=iris.petal_width.min(),
 result = bl.by(iris.species, min=iris.petal_width.min(),
                max=iris.petal_width.max())
 
-print into(bl.DataFrame, result)
-print into(pd.DataFrame, result)
+print odo(result, bl.DataFrame)
+print odo(result, pd.DataFrame)
 
-print into('output.csv', result)
+print odo(result, 'output.csv')
 
 print repr(iris.sepal_length.mean())
 print repr(bl.mean(iris.sepal_length))
@@ -82,7 +82,7 @@ pd_df = pd.DataFrame({
    'id': [1, 2, 3, 4],
 })
 
-# put the `df` DataFrame into a Blaze Data object
+# put the `df` DataFrame odo a Blaze Data object
 bl_df = bl.DataFrame(pd_df)
 bl_dt = bl.Data(pd_df)
 
