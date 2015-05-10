@@ -1,4 +1,8 @@
 #!/usr/bin/python
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import os
 import pandas as pd
@@ -22,14 +26,14 @@ def blaze_test():
             if type(getattr(dbb, dbc)) == bl.expr.expressions.Field:
                 tables.append(dbc)
     teams_df = dbb.teams
-    print teams_df.columns
+    print(teams_df.columns)
     for tab in tables:
         csvstr = '%s.csv' % tab
-        print tab
+        print(tab)
         odo.odo(getattr(dbb, tab), bl.CSV(csvstr))
         os.system('gzip %s' % csvstr)
         teams_df = pd.read_csv('%s.gz' % csvstr, compression='gzip')
-        print teams_df.describe()
+        print(teams_df.describe())
         exit(0)
 
 if __name__ == '__main__':
