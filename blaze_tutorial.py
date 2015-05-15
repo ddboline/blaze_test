@@ -60,7 +60,9 @@ result = bl.by(iris.species, min=iris.petal_width.min(),
 print(odo(result, bl.DataFrame))
 print(odo(result, pd.DataFrame))
 
-print(odo(result, 'output.csv'))
+### odo has weird issue with unicode filenames, apparently...
+name = 'output.csv'
+print(odo(result, name.encode()))
 
 print(repr(iris.sepal_length.mean()))
 print(repr(bl.mean(iris.sepal_length)))
