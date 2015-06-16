@@ -62,7 +62,7 @@ print(odo(result, pd.DataFrame))
 
 ### odo has weird issue with unicode filenames, apparently...
 name = 'output.csv'
-print(odo(result, name))
+print(odo(result, bl.CSV(name)))
 
 print(repr(iris.sepal_length.mean()))
 print(repr(bl.mean(iris.sepal_length)))
