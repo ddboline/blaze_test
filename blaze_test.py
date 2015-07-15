@@ -1,4 +1,5 @@
 #!/usr/bin/python
+""" Tests for blaze """
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -34,7 +35,7 @@ def blaze_test():
         os.system('gzip %s' % csvstr)
         teams_df = pd.read_csv('%s.gz' % csvstr, compression='gzip')
         print(teams_df.describe())
-        exit(0)
+    return
 
 if __name__ == '__main__':
     blaze_test()
