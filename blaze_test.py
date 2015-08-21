@@ -31,9 +31,9 @@ def blaze_test():
     for tab in tables:
         csvstr = '%s.csv' % tab
         print(tab)
-        odo.odo(getattr(dbb, tab), bl.CSV(csvstr))
+        teams_df = odo.odo(getattr(dbb, tab), pd.DataFrame)
+        odo.odo(teams_df, bl.CSV(csvstr))
         os.system('gzip %s' % csvstr)
-        teams_df = pd.read_csv('%s.gz' % csvstr, compression='gzip')
         print(teams_df.describe())
     return
 
