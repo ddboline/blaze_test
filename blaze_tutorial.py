@@ -48,10 +48,10 @@ def blaze_tutorial():
     print(repr(df_[df_.balance < 0].name))
     print(list(df_[df_.balance < 0].name))
 
-    iris = bl.Data('blaze/blaze/examples/data/iris.csv')
+    iris = bl.Data('examples/iris.csv')
     print(repr(iris))
 
-    iris = bl.Data('sqlite:///blaze/blaze/examples/data/iris.db::iris')
+    iris = bl.Data('sqlite:///examples/iris.db::iris')
     print(repr(iris))
 
     print(repr(bl.by(iris.species, min=iris.petal_width.min(),
@@ -157,6 +157,8 @@ def blaze_tutorial():
     print(repr(bl_dt.amount.dshape))
 
     print(type(pd_df), type(bl_df), type(bl_dt))
+
+    os.remove('output.csv')
 
     return
 
