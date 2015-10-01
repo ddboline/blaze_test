@@ -5,6 +5,8 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import os
+import glob
 import pandas as pd
 import blaze as bl
 from odo import odo
@@ -159,6 +161,8 @@ def blaze_tutorial():
     print(type(pd_df), type(bl_df), type(bl_dt))
 
     os.remove('output.csv')
+    for fn_ in glob.glob('*.csv.gz'):
+        os.remove(fn_)
 
     return
 
