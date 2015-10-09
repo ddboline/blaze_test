@@ -12,6 +12,7 @@ import odo
 
 USER = os.getenv('USER')
 
+
 def blaze_test():
     user = 'ddboline'
     pwd = 'BQGIvkKFZPejrKvX'

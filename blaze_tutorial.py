@@ -11,6 +11,7 @@ import pandas as pd
 import blaze as bl
 from odo import odo
 
+
 def blaze_tutorial():
     accounts = bl.Symbol('accounts',
                          'var * {id: int, name: string, amount: int}')
@@ -38,11 +39,11 @@ def blaze_tutorial():
     print([d for d in pd_df_dir if d not in bl_df_dir])
 
     df_ = bl.Data([(1, 'Alice', 100),
-             (2, 'Bob', -200),
-             (3, 'Charlie', 300),
-             (4, 'Denis', 400),
-             (5, 'Edith', -500)],
-             fields=['id', 'name', 'balance'])
+                   (2, 'Bob', -200),
+                   (3, 'Charlie', 300),
+                   (4, 'Denis', 400),
+                   (5, 'Edith', -500)],
+                  fields=['id', 'name', 'balance'])
 
     print(repr(df_))
     print(repr(df_[df_.balance < 0]))
@@ -87,11 +88,9 @@ def blaze_tutorial():
     print(repr(iris.relabel(petal_length='PETAL-LENGTH',
                             petal_width='PETAL-WIDTH')))
 
-    pd_df = pd.DataFrame({
-       'name': ['Alice', 'Bob', 'Joe', 'Bob'],
-       'amount': [100, 200, 300, 400],
-       'id': [1, 2, 3, 4],
-   })
+    pd_df = pd.DataFrame({'name': ['Alice', 'Bob', 'Joe', 'Bob'],
+                          'amount': [100, 200, 300, 400],
+                          'id': [1, 2, 3, 4]})
 
     # put the `df` DataFrame odo a Blaze Data object
     bl_df = bl.DataFrame(pd_df)
