@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [ "$HOSTNAME" != "dilepton-tower" ]; then
-    ssh -N -L localhost:5432:localhost:5432 ddboline@ddbolineathome.mooo.com &
-    sleep 5
-fi
+nosetests `find . -iname '*.py'`
 
-python3 ./blaze_test.py
-python3 ./blaze_tutorial.py
+for FILE in analyze_audio.py bayesian_blocks.py fft_test.py framing_lena.py image_blur.py linalg_test.py periodicity_finder.py;
+do
+    echo $FILE
+    python3 ./${FILE}
+done
