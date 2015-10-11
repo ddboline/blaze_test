@@ -5,5 +5,7 @@ if [ "$HOSTNAME" != "dilepton-tower" ]; then
     sleep 5
 fi
 
-python3 ./blaze_test.py
-python3 ./blaze_tutorial.py
+python3 ./blaze_test.py > test.out
+python3 ./blaze_tutorial.py > tutorial.out
+
+md5sum test.out tutorial.out
