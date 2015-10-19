@@ -21,7 +21,6 @@ HOSTNAME = os.uname()[1]
 def blaze_test(port=5432):
     user = 'ddboline'
     pwd = 'BQGIvkKFZPejrKvX'
-#    host = 'ddbolineathome.mooo.com'
     host = 'localhost'
     dbname = 'lahman2014'
     dbstring = 'postgresql://%s:%s@%s:%s/%s' % (user, pwd, host, port, dbname)
