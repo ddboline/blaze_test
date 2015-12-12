@@ -159,9 +159,9 @@ def blaze_tutorial():
 
     print(type(pd_df), type(bl_df), type(bl_dt))
 
-    os.remove('output.csv')
-    for fn_ in glob.glob('*.csv.gz'):
-        os.remove(fn_)
+    #os.remove('output.csv')
+    #for fn_ in glob.glob('*.csv.gz'):
+        #os.remove(fn_)
 
     return
 
