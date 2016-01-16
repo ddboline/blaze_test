@@ -1,9 +1,7 @@
 #!/usr/bin/python
 """ Working through blaze tutorial, nothing to see here """
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
+from __future__ import (absolute_import, division, print_function,
+                        unicode_literals)
 
 import os
 import glob
@@ -83,7 +81,10 @@ def blaze_tutorial():
                         petal_ratio=iris.petal_length/iris.petal_width)
     print(repr(iris.head()))
 
-    print(repr(iris.like(species='*versicolor')))
+    versicolor = iris[iris.species.like('%versicolor')]
+    print(repr(versicolor))
+
+    print((len(versicolor), len(versicolor.columns)))
 
     print(repr(iris.relabel(petal_length='PETAL-LENGTH',
                             petal_width='PETAL-WIDTH')))
@@ -145,23 +146,24 @@ def blaze_tutorial():
     print(repr(bl_df))
     print(repr(bl_dt))
 
-    print(repr(pd_df.amount.value_counts()))
-    print(repr(bl_df.amount.value_counts()))
-    print(repr(bl_dt.amount.count_values()))
+    print(repr(pd_df.amount.value_counts()), '\n')
+    print(repr(bl_df.amount.value_counts()), '\n')
+    print(repr(bl_dt.amount.count_values()), '\n')
 
-    print(repr(pd_df.dtypes))
-    print(repr(bl_df.dtypes))
-    print(repr(bl_dt.dshape))
+    print(repr(pd_df.dtypes), '\n')
+    print(repr(bl_df.dtypes), '\n')
+    print(repr(bl_df.columns), '\n')
+    print(repr(bl_dt.dshape), '\n')
 
-    print(repr(pd_df.amount.dtypes))
-    print(repr(bl_df.amount.dtypes))
-    print(repr(bl_dt.amount.dshape))
+    print(repr(pd_df.amount.dtypes), '\n')
+    print(repr(bl_df.amount.dtypes), '\n')
+    print(repr(bl_dt.amount.dshape), '\n')
 
-    print(type(pd_df), type(bl_df), type(bl_dt))
+    print(type(pd_df), type(bl_df), type(bl_dt), '\n')
 
-    #os.remove('output.csv')
-    #for fn_ in glob.glob('*.csv.gz'):
-        #os.remove(fn_)
+    os.remove('output.csv')
+    for fn_ in glob.glob('*.csv.gz'):
+        os.remove(fn_)
 
     return
 
