@@ -4,3 +4,5 @@
 ./blaze_tutorial.py > tutorial.out
 
 md5sum test.out tutorial.out
+
+cat test.out tutorial.out
