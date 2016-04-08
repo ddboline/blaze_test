@@ -7,7 +7,7 @@ sudo bash -c "echo deb ssh://ddboline@ddbolineathome.mooo.com/var/www/html/deb/t
 sudo apt-get update
 sudo apt-get install -y --force-yes postgresql-client python3-psycopg2 g++ \
                                     python3-dev ipython3 python3-blaze \
-                                    python3-sklearn python3-numpy=1.10\* \
+                                    python3-sklearn python3-numpy=1.\* \
                                     python3-pandas
 
 git clone https://github.com/ContinuumIO/blaze
