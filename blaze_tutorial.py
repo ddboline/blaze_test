@@ -77,8 +77,8 @@ def blaze_tutorial():
 
     print(repr(iris.head()))
 
-    iris = bl.transform(iris, sepal_ratio=iris.sepal_length/iris.sepal_width,
-                        petal_ratio=iris.petal_length/iris.petal_width)
+    iris = bl.transform(iris, sepal_ratio=iris.sepal_length / iris.sepal_width,
+                        petal_ratio=iris.petal_length / iris.petal_width)
     print(repr(iris.head()))
 
     versicolor = iris[iris.species.like('%versicolor')]
@@ -122,9 +122,9 @@ def blaze_tutorial():
     #pd.merge(pd_df, pd_df2, on='name')
     #bl.join(bl_dt, bl_dt2, 'name')
 
-    print(repr(pd_df.amount.map(lambda x: x+1)))
-    print(repr(bl_df.amount.map(lambda x: x+1)))
-    print(repr(bl_dt.amount.map(lambda x: x+1, 'int64')))
+    print(repr(pd_df.amount.map(lambda x: x + 1)))
+    print(repr(bl_df.amount.map(lambda x: x + 1)))
+    print(repr(bl_dt.amount.map(lambda x: x + 1, 'int64')))
 
     print(repr(pd_df.rename(columns={'name': 'alias', 'amount': 'dollars'})))
     print(repr(bl_df.rename(columns={'name': 'alias', 'amount': 'dollars'})))
