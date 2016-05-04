@@ -84,7 +84,7 @@ def blaze_tutorial():
     versicolor = iris[iris.species.like('%versicolor')]
     print(repr(versicolor))
 
-    print((len(versicolor), len(versicolor.columns)))
+    print((len(versicolor), len(versicolor.fields)))
 
     print(repr(iris.relabel(petal_length='PETAL-LENGTH',
                             petal_width='PETAL-WIDTH')))

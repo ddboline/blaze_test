@@ -29,7 +29,7 @@ def blaze_test(port=5432):
             if type(getattr(dbb, dbc)) == bl.expr.expressions.Field:
                 tables.append(dbc)
     teams_df = dbb.teams
-    print(teams_df.columns)
+    print(teams_df.fields)
     for tab in tables:
         csvstr = '%s.csv' % tab
         print(tab)
